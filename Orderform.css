@@ -1,0 +1,41 @@
+/*Order Form for Group Assignment*/
+/*Written by Charles Crumpton*/
+
+form {
+	display: table;
+	padding: 3px;
+
+	background-color: #efe5d0;
+}
+
+section#main{
+	padding: 0px 0px 0px 10px;
+	}
+
+form textarea {
+	width: 300px;
+	height: 100px;
+	}
+
+div.tableRow {
+	display: table-row;
+	}
+
+div.tableRow label {
+	display: table-cell;
+	vertical-align: top;
+	color:		#800000;
+	
+	}
+div.tableRow label:first-child {
+	text-align: right;
+	}
+legend {
+	font-weight: bold;
+	color:		#800000;
+	}
+	
+form {
+	
+	color:		#800000;	
+	}
