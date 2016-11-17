@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+
+<!-- Home page -->
+<!-- Written and Modified by Anh Vuong and Charles Crumpton -->
+
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title> CS4443 Pizza Home Page </title>
+		<link rel = "stylesheet" type = "text/css" href = "styles.css">
+		<script type="text/javascript" src="cs4443Scripts.js"></script>
+	</head>
+	
+	<body>
+		<div id ="header">
+			<img id = "logo" src = "images/logo.jpg" alt = "CS4443 Pizza Logo">	
+			<img id = "headerSlogan" src = "images/slogan.jpg" alt = "CS4443 Pizza slogan">
+		</div> 
+		
+	<nav>
+	<ul>
+		<li class="selected"><a href="index.html">HOME</a></li>
+		<li><a href="OurMenu.html">Menu</a></li>
+		<li><a href="helpfullSites.html">Helpfull Sites</a></li>
+		<li><a href="contactUs.html">Contact Us</a></li>
+	</ul>
+	</nav>	<!-- End of nav -->	
+	
+	<div id = "OrderNowButton">
+	<div id = "OrderNow">
+	
+	<section id = "orderButton">
+		<a href="OrderNow.html">
+			<img src = "Images/orderNowMO.jpg" width = "100" height = "60"
+			onmouseover = "this.src = 'Images/orderNow.jpg';"
+			onmouseout = "this.src = 'Images/orderNowMO.jpg';"
+			alt = "ORDER NOW">
+		</a>	
+	</section>
+	
+
+	
+	</div>  <!-- End of OrderNowButton -->
+	</div>  <!-- End of ORDERNow -->
+		
+	<div id="tableContainer">
+	<div id="tableRow">
+	
+
+	<section id="menuItems">
+		<h1>Choose Your Favourite Pizzas</h1>
+			<p><a href="orderNow.html">Cheese Pizza</a></p>
+			<p><a href="orderNow.html">Pepperoni Pizza</a></p>
+			<p><a href="orderNow.html">Veggie Pizza</a></p>
+			<p><a href="orderNow.html">Hawaiian Pizza</a></p>
+			<p><a href="orderNow.html">Meat Lovers Pizza</a></p>
+			<p><a href="orderNow.html">Fully Loaded Pizza</a></p>
+	</section> <!-- End of menuItems sections-->
+	
+    <section id="pizzas">
+	<figure>
+			<h2>Point to images to see our menu descriptions</h2>
+	
+			<img id= "cheesePizza" src = "Images/cheese.jpg" title = "Our delicious Cheese Pizza starts with our special white sauce, extra virgin olive oil, garlic, and spices spread over baked-to-perfection thin and crispy gluten free crust. We top it off with our premium cheese blend of mozzarella, parmesan, and romano and sprinkle fresh-frozen basil to create a flavorful crowd pleaser." 
+			width = "200" height = "200"
+			alt = ""/>
+
+			<img id= "pepperoniPizza" src = "Images/pepperoni.jpg" title = "Our tasty Pepperoni Pizza starts with our savory sauce of vine-ripened tomatoes, extra butter and our special flavors with garlic, and spices spread over a baked-to-perfection thin and crispy gluten free crust. It is on top with premium mozzarella, a sprinkling of fresh-frozen basil and layer on uncured pepperoni for a hearty and satisfying indulgence." 
+			width = "200" height = "200"
+			alt = ""/>
+			
+			<img id= "veggiePizza" src = "Images/veggie.jpg" title = "Our tasty Veggie Pizza starts with our savory sauce of vine-ripened tomatoes, extra Tamayaki sause and herbal flavors over a baked-to-perfection thin and crispy gluten free crust. We designed it with our premium items like ricotta cheese, cremini mushrooms and fresh zucchini." 
+			width = "200" height = "200"
+			alt = ""/>
+						
+			<img id= "hawaiianPizza" src = "Images/hawaiian.jpg" title = "Classic Hawaiian Pizza is a staple on our Friday nights. This crowd-pleasing recipe starts with our fluffy homemade pizza crust and is finished with a sprinkle of crisp bacon over a baked-to-perfection thin and crispy gluten free crust. It’s love at first bite and you may want to order again after last bite." 
+			width = "200" height = "200"
+			alt = ""/>
+			
+			<img id= "meatLoversPizza" src = "Images/MeatLovers.jpg"  title = "Our full-of-meats Pizza starts with our savory sauce of vine-ripened tomatoes, extra honey and spring flavors with pine apple and three types of meats over a baked-to-perfection thin and crispy gluten free crust." 
+			width = "200" height = "200"
+			alt = ""/>
+			
+			<img id= "fulyLoadedPizza" src = "Images/fullyLoaded.jpg"  title = "This fully-loaded pizza with 3 kinds of meat and gooey mozzarella is guaranteed to make everyone at the table smile. Slice-by-slice this yummy roasted pizza will disappear before your eyes." 
+			width = "200" height = "200"
+			alt = ""/>
+			
+			<p></p>
+			<br/><br/>
+			
+			<img id= "ChefSalad" src = "Images/ChefSalad.jpg"  title = "Chef salad is a salad consisting of hard-boiled eggs; one or more varieties of meat, such as ham, turkey, chicken, or roast beef; tomatoes; cucumbers; and cheese; all placed upon a bed of tossed lettuce or other leaf vegetables." 
+			width = "230" height = "200"
+			alt = ""/>
+			
+			<img id= "ItalianPastaPrimavera" src = "Images/PastaPrimavera.jpg"  title = "Primavera is Italian for Spring. The tomatoes are harvested and combined with fresh basil, Italian parsley, garlic, and olive oil and Spaghetti is the chosen premium pasta." 
+			width = "250" height = "200"
+			alt = ""/>
+			
+			<img id= "HotBuffaloChickenWings" src = "Images/HotBuffaloWings.jpg"  title = "This is our favourite US style chicken wings. The sause is made by combining the butter, hot sauce and lemon juice and mix with free fried chicken wings in premium peanut oil." 
+			width = "250" height = "200"
+			alt = ""/>
+			
+			<img id= "Stuffed Cheesy Bread" src = "Images/StuffedCheesyBread.jpg"  title = "The bread sticks were top off by a blend of cheese made with 100 percent mozzarella and cheddar." 
+			width = "230" height = "200"
+			alt = ""/>
+			
+			<img id= "Parmesan Bread Bites" src = "Images/ParmesanBreadBites.jpg"  title = "Premium handmade bread bites served with Alfredo Dip." 
+			width = "240" height = "200"
+			alt = ""/>
+
+	</figure>	
+    </section> <!-- End of Main section -->
+	
+	</div> <!-- End of tableRow div-->
+	</div> <!-- End of tableContainer  div-->
+	
+	
+
+
+	<footer id = "closing">
+      &copy; 2015, CS4443 Pizza
+      <br>
+      All trademarks and registered trademarks appearing on 
+      this site are the property of their respective owners.
+    </footer>	
+
+	</body>
+
+</html>
