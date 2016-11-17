@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+
+<!-- Order Now Page -->
+<!-- Written by Anh Vuong -->
+
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title> CS4443 Pizza Order Now </title>
+		<link rel = "stylesheet" type = "text/css" href = "styles.css">
+		<link rel="stylesheet" type = "text/css" href="Orderform.css">
+		<script>
+			var pizzaSize = new Array();
+			pizzaSize["Small"] = 1.99;
+			pizzaSize["Medium"] = 2.99;
+			pizzaSize["Large"] = 3.99;
+			pizzaSize["ExLarge"] = 4.99;
+	
+			var pizzaTop = new Array();
+			pizzaTop["Cheese"] = 1.49;
+			pizzaTop["Pepperoni"] = 1.99;
+			pizzaTop["Veggie"] = 0.99;
+			pizzaTop["Hawaiian"] = 2.99;
+			pizzaTop["FullyLoaded"] = 3.99;
+
+			function getPizzaPrice()
+			{
+				var pizzaSizePrice = 0;
+				var pizzaTopPrice = 0;
+				var orderForm = document.forms["pizzaOrder"];
+				var selectSize = orderForm.elements["selectSize"];
+				var selectTop = orderForm.elements["selectTop"];
+	
+				for(var i = 0; i < selectSize.length; i++)
+				if(selectSize[i].checked)
+				{
+					pizzaSizePrice += pizzaSize[selectSize[i].value];
+					break;
+				}
+		
+				for(var j = 0; j < selectTop.length; j++)
+				if(selectTop[j].checked)
+				{
+					pizzaTopPrice += pizzaTop[selectTop[j].value];
+					break;
+				}
+				return pizzaSizePrice + pizzaTopPrice;
+			}
+
+			var extra = new Array();
+			extra["Chef"] = 2.99;
+			extra["Pasta"] = 3.99;
+			extra["Wing"] = 5.99;
+			extra["Bread"] = 4.99;
+			extra["PBite"] = 5.49;
+	
+			var drink = new Array();
+			drink["coke"] = 1.19;
+			drink["dietCoke"] = 1.09;
+			drink["sprite"] = 1.49;
+			drink["tea"] = 1.99;
+	
+			function getOtherPrice()
+			{
+				var extraPrice = 0;
+				var drinkPrice = 0;
+				var orderForm = document.forms["otherOrder"];
+				var selectExtra = orderForm.elements["selectExtra"];
+				var selectDrink = orderForm.elements["selectDrink"];
+	
+				for(var i = 0; i < selectExtra.length; i++)
+				if(selectExtra[i].checked)
+				{
+					extraPrice += extra[selectExtra[i].value];
+					break;
+				}
+		
+				for(var j = 0; j < selectDrink.length; j++)
+				if(selectDrink[j].checked)
+				{
+					drinkPrice += drink[selectDrink[j].value];
+					break;
+				}
+				return extraPrice + drinkPrice;
+			}
+
+			function start()
+			{
+				document.getElementById("Button").addEventListener("click", display, false);
+			}
+
+			function display()
+			{
+				var totalPrice = getPizzaPrice() + getOtherPrice();
+				document.getElementById("totalPrice").innerHTML = "The Total Price Of Your Order is: $" + totalPrice;
+			}
+
+			window.addEventListener( "load", start, false );		
+		</script>
+	</head>
+	
+	<body onload  'hideTotal()'>
+		<div id ="header">
+		<img id = "logo" src = "images/logo.jpg" alt = "CS4443 Pizza Logo">	
+		<img id = "headerSlogan" src = "images/slogan.jpg" alt = "CS4443 Pizza slogan">
+		</div>
+
+	<nav>
+	<ul>
+		<li><a href="index.html">HOME</a></li>
+		<li><a href="OurMenu.html">Menu</a></li>
+		<li><a href="helpfullSites.html">Helpfull Sites</a></li>
+		<li><a href="contactUs.html">Contact Us</a></li>
+	</ul>
+	</nav>	<!-- End of nav -->	
+	
+		
+	<div id="tableContainer">
+	<div id="tableRow">
+	
+	<section id="menuItems">
+		<h1>Pizzas</h1>	
+		
+			<form action ="" id = "pizzaOrder" onsubmit = "return false;">
+			<div>
+				<div class = "order">
+				<fieldset>
+					<legend>Custom Your Pizza</legend>
+					
+					<label>Pizza Size</label>
+					<div class="tableRow">
+						<input type="radio"  name="selectSize" value="Small" /><label for="PizzaType">Small (6") $1.99</label>
+					</div>		
+					<div class="tableRow">
+						<input type="radio"  name="selectSize" value="Medium" /><label for="PizzaType">Medium (8") $2.99</label>
+					</div>
+					<div class="tableRow">
+						<input type="radio"  name="selectSize" value="Large" /><label for="PizzaType">Large (12") $3.99</label>
+					</div>
+					
+					<div class="tableRow">
+						<input type="radio"  name="selectSize" value="ExLarge" /><label for="PizzaType">Extra Large (16") $4.99</label>
+					</div>	
+
+					<label>Pizza Topping</label>
+					<div class="tableRow">
+						<input type="radio"  name="selectTop" value="Cheese" /><label for="PizzaTopping">Cheese $1.49</label>
+					</div>						
+					<div class="tableRow">
+						<input type="radio"  name="selectTop" value="Pepperoni" /><label for="PizzaTopping">Pepperoni $1.99</label>
+					</div>	
+					<div class="tableRow">
+						<input type="radio"  name="selectTop" value="Veggie" /><label for="PizzaTopping">Veggie $.99</label>
+					</div>
+					<div class="tableRow">
+						<input type="radio"  name="selectTop" value="Hawaiian" /><label for="PizzaTopping">Hawaiian $2.99</label>
+					</div>	
+					<div class="tableRow">
+						<input type="radio"  name="selectTop" value="FullyLoaded" /><label for="PizzaTopping">Fully Loaded $3.99</label>
+					</div>
+
+				</form>
+				</fieldset>
+				</div>
+			</div>	
+	</section> <!-- End of pizzas sections-->
+					
+	<section id="menuItems">
+		<h1>Extras and Beverages</h1>	
+		
+			<form action ="" id = "otherOrder" onsubmit = "return false;">
+			<div>
+				<div class = "order">
+				<fieldset>
+					<legend>Choose Your Extra and Drink</legend>
+					
+					<label>Extras</label>										
+					<div class="tableRow">
+						<input type="radio"  name="selectExtra" value="Chef" /><label for="ExtraType">Chef Salad $2.99</label>
+					</div>					
+					<div class="tableRow">
+						<input type="radio"  name="selectExtra" value="Pasta" /><label for="ExtraType">Italian Pasta Primavera $3.99</label>
+					</div>		
+					<div class="tableRow">
+						<input type="radio"  name="selectExtra" value="Wing" /><label for="ExtraType">Hot Buffalo Chicken Wings $5.99</label>
+					</div>
+					<div class="tableRow">
+						<input type="radio"  name="selectExtra" value="Bread" /><label for="ExtraType">Stuffed Cheesy Bread $4.99</label>
+					</div>
+					<div class="tableRow">
+						<input type="radio"  name="selectExtra" value="PBite" /><label for="ExtraType">Parmesan Bread Bites $5.49</label>
+					</div>
+					
+					<label>Drinks</label>
+					<div class="tableRow">
+						<input type="radio"  name="selectDrink" value="coke" /><label for="BeverageType">2 Liters Coke $1.19</label>
+					</div>						
+					<div class="tableRow">
+						<input type="radio"  name="selectDrink" value="dietCoke" /><label for="BeverageType">2 Liters Diet Coke $1.09</label>
+					</div>	
+					<div class="tableRow">
+						<input type="radio"  name="selectDrink" value="sprite" /><label for="BeverageType">2 Liters Sprite $1.49</label>
+					</div>
+					<div class="tableRow">
+						<input type="radio"  name="selectDrink" value="tea" /><label for="BeverageType">1 Gal Sweet Tea $1.99</label>
+					</div>
+					
+				</form>
+				</fieldset>
+				</div>
+			</div>	
+	</section> <!-- End of extras and beverages sections-->
+	
+	<fieldset>
+		<legend>Press to calculate your Total Price</legend>
+		<p><input id = "Button" type = "button" value = "Calculate"></p>
+		<p id = "totalPrice"></p>
+	</fieldset>
+	
+    <section id="main">
+
+	<form action="ThankYou.html">
+	<fieldset>
+		<legend>Deliver Options</legend>
+		<div class="tableRow">
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" value=""  required> 
+		</div>
+		<div class="tableRow">
+			<label for="address">Address:</label>
+			<input type="text" id="address" name="address" value=" "required> 
+		</div>
+				<div class="tableRow">
+			<label for="address">Address:</label>
+			<input type="text" id="address" name="address" value=" "required> 
+		</div>
+		<div class="tableRow">
+			<label for="city">City:</label>
+			<input type="text" id="city" name="city" value=""  required> 
+		</div>
+		<div class="tableRow">
+			<label for="state">State:</label>
+			<input type="text" id="state" name="state" value=""  required>
+		</div>
+		<div class="tableRow">
+			<label for="zip">Zip:</label>
+			<input type="text" id="zip" name="zip" value=""  required>
+		</div>
+		<div class="tableRow">
+			<label for="phone">Phone:</label>
+			<input type="tel" id="phone" name="phone" value=""  required>
+		</div>
+		<div class="tableRow">
+			<label for="comments">Delivery Instructions:</label>
+            <textarea id="comments" name="comments"></textarea>
+		</div>
+		
+		<div class="tableRow">
+			<label></label>
+			<input type="button" value="Place Order"
+			onclick="window.location='ThankYou.html';"/>
+		</div>
+		
+	</fieldset>
+    </form>
+
+    </section> <!-- End of Main section -->
+	
+	</div> <!-- End of tableRow div-->
+	</div> <!-- End of tableContainer  div-->
+
+	<footer id = "closing">
+      &copy; 2015, CS4443 Pizza
+      <br>
+      All trademarks and registered trademarks appearing on 
+      this site are the property of their respective owners.
+    </footer>	
+
+	</body>
+
+</html>
